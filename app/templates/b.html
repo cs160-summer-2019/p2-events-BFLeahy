@@ -29,7 +29,7 @@
 
 		<div class="row">
 			<div class="col-12">
-				<div class="shape-container">
+				<div class="shape-container" id="b">
 					<!-- Dynamically add your circles here! -->
 					<!-- Example circle: <div class="p2-circle bg-blue"></div> -->
 				</div>
@@ -39,8 +39,16 @@
 
 
 <script type="text/javascript">
-
-	// your solution here
+  function addBubble() {
+    $('#b').append("<div class='p2-circle bg-blue'></div>");
+  }
+  var t = setInterval(addBubble, 1000);
+  
+  $(document).ready(() => {
+    $('button').on('click', () => {
+      clearInterval(t);
+    });
+  });
 
 </script>
 </body>
